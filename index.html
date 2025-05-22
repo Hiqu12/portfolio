@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Haziq Afzal | Portfolio</title>
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Roboto', sans-serif;
+    }
+    body {
+      background-color: #f4f4f4;
+      color: #333;
+      line-height: 1.6;
+    }
+    header {
+      background: linear-gradient(to right, #1c1c1c, #333);
+      color: #fff;
+      padding: 20px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+    }
+    header h1 {
+      font-size: 28px;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+    .nav-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+    .nav-toggle span {
+      background: #fff;
+      height: 3px;
+      margin: 3px 0;
+      position: relative;
+      bottom: 35px;
+      margin-left: 340px;
+      width: 28px;
+      border-radius: 2px;
+      display: block;
+      transition: all 0.3s ease;
+    }
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      transition: max-height 0.3s ease-in-out, transform 0.3s ease-in-out;
+      overflow: hidden;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      padding: 10px 16px;
+      border-radius: 6px;
+      font-weight: 500;
+      transition: background 0.3s, color 0.3s;
+    }
+    nav a:hover {
+      background: #555;
+      color: #ffd700;
+    }
+    section {
+      padding: 100px 25px 60px;
+      max-width: 1000px;
+      margin: auto;
+    }
+    h2 {
+      margin-bottom: 25px;
+      color: #1a1a1a;
+      font-size: 32px;
+      text-align: center;
+      position: relative;
+    }
+    h2::after {
+      content: "";
+      width: 60px;
+      height: 3px;
+      background: #007acc;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: -10px;
+      border-radius: 2px;
+    }
+    .hero {
+      min-height: 100vh;
+      width: 100%;
+      margin-top: 80px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background: linear-gradient(135deg, #6e8efb, #a777e3);
+      color: white;
+      padding: 60px 20px;
+      animation: fadeIn 2s ease-in-out;
+      position: relative;
+    }
+    .hero img {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+      margin-bottom: 25px;
+      transition: transform 0.4s ease;
+    }
+    .hero img:hover {
+      transform: scale(1.08);
+    }
+    .hero h2 {
+      font-size: 36px;
+      font-weight: bold;
+      margin-bottom: 15px;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+    }
+    .hero p {
+      font-size: 20px;
+      max-width: 700px;
+      line-height: 1.6;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+    }
+    /* Existing styles... */
+
+.skills ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  list-style: none;
+  gap: 20px;
+  padding: 0;
+  margin-top: 30px;
+}
+.skills li {
+  background: linear-gradient(to bottom right, #f0f8ff, #ffffff);
+  padding: 25px;
+  border-radius: 15px;
+  text-align: center;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  border: 1px solid #d0eaff;
+}
+.skills li:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+}
+.skills li i {
+  font-size: 30px;
+  color: #007acc;
+  margin-bottom: 10px;
+}
+.contact {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+.contact h2 {
+  margin-bottom: 20px;
+  color: #1a1a1a;
+  font-size: 32px;
+  text-align: center;
+  position: relative;
+}
+.contact h2::after {
+  content: "";
+  width: 60px;
+  height: 3px;
+  background: #007acc;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -10px;
+  border-radius: 2px;
+}
+.contact p {
+  margin: 15px 0;
+  font-size: 18px;
+  color: #333;
+  line-height: 1.8;
+  background-color: #f9f9f9;
+  padding: 12px 20px;
+  border-left: 4px solid #007acc;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+.contact p a {
+  color: #007acc;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+.contact p a:hover {
+  color: #005f99;
+  text-decoration: underline;
+}
+.contact form {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.contact form input,
+.contact form textarea {
+  padding: 12px 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+  resize: vertical;
+  font-family: 'Roboto', sans-serif;
+}
+.contact form input:focus,
+.contact form textarea:focus {
+  border-color: #007acc;
+  outline: none;
+  box-shadow: 0 0 5px #007acc;
+}
+.contact form button {
+  background-color: #007acc;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 18px;
+  transition: background-color 0.3s ease;
+}
+.contact form button:hover {
+  background-color: #005f99;
+}
+#form-status {
+  font-size: 16px;
+  margin-top: 10px;
+  color: #007acc;
+  font-weight: 600;
+}
+footer{
+    text-align: center;
+    background-color: black;
+    color: white;
+    height: 7cqb;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .skills ul {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 15px;
+  }
+  .skills li {
+    padding: 20px;
+  }
+  .contact p {
+    font-size: 16px;
+    padding: 10px 15px;
+  }
+}
+
+    @media (max-width: 768px) {
+      .nav-toggle {
+        display: flex;
+      }
+      nav {
+        flex-direction: column;
+        width: 100%;
+        max-height: 0;
+        overflow: hidden;
+        transform: translateY(-20px);
+        opacity: 0;
+      
+      }
+      nav.show {
+        max-height: 500px;
+        transform: translateY(0);
+        opacity: 1;
+      }
+      nav a {
+        padding: 12px;
+        background: #333;
+        text-align: center;
+        width: 100%;
+      }
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+        height: ;
+      }
+      .hero {
+        padding: 40px 15px;
+        margin-top: 100px;
+        min-height: auto;
+      }
+      .hero h2 {
+        font-size: 28px;
+      }
+      .hero p {
+        font-size: 16px;
+      }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+   
+    
+  </style>
+</head>
+<body>
+  <header id="home">
+    <h1>Haziq Afzal</h1>
+    <div class="nav-toggle" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <nav id="navbar">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+  <section class="hero">
+    <img src="WhatsApp_Image_2025-05-20_at_1.19.16_PM-removebg-preview.png" alt="Haziq Afzal">
+    <h2>Hi, I'm Haziq Afzal</h2>
+    <p>Software Engineer passionate about Full Stack Development, Digital Advertising, and SEO Strategies.</p>
+  </section>
+  <section id="about">
+    <h2>About Me</h2>
+    <p>Hello! I'm <strong>Haziq Afzal</strong>, a dedicated and versatile Software Engineer with a strong background in full stack development, digital advertising, and SEO strategies. I thrive on building efficient, scalable, and user-friendly digital experiences.</p>
+    <p>My mission is to bridge creativity and functionality in every digital solution I craft—whether it's a marketing campaign, a dynamic website, or optimized web content.</p>
+  </section>
+  <section id="skills" class="skills">
+    <h2>Skills</h2>
+    <ul>
+      <li><i class="fas fa-bullhorn"></i> Digital Advertising</li>
+      <li><i class="fas fa-code"></i> Full Stack Development</li>
+      <li><i class="fas fa-search"></i> SEO Strategies</li>
+      <li><i class="fas fa-pencil-ruler"></i> Basic Graphic Design</li>
+      <li><i class="fas fa-file-alt"></i> MS Office Expert</li>
+      <li><i class="fas fa-tachometer-alt"></i> Web Optimization</li>
+      <li><i class="fas fa-pen-nib"></i> Content Creation</li>
+      <li><i class="fas fa-share-alt"></i> Social Media Management</li>
+      <li><i class="fas fa-key"></i> Keyword Research</li>
+      <li><i class="fas fa-keyboard"></i> Data Entry</li>
+    </ul>
+  </section>
+<section id="contact" class="contact">
+  <h2>Contact</h2>
+  <p>Email: <a href="mailto:haziqafzal800@gmail.com">haziqafzal800@gmail.com</a></p>
+  <p>Phone: <a href="tel:+923246173885">+92 324 6173885</a></p>
+  <p>GitHub: <a href="https://github.com/Hiqu12" target="_blank">github.com/Hiqu12</a></p>
+
+  <form id="contact-form">
+      <input type="text" name="user_name" placeholder="Your Name" required />
+    <input type="email" name="user_name" placeholder="Your Name" required />
+    <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+    <button type="submit">Send Message</button>
+    <!-- <p id="form-status"></p> -->
+  </form>
+</section>
+<!-- Include EmailJS SDK -->
+<script src="https://cdn.emailjs.com/sdk/3.2/email.min.js"></script>
+
+<script>
+  (function(){
+    emailjs.init("YOUR_USER_ID"); // Replace with your EmailJS user ID
+  })();
+
+  const form = document.getElementById('contact-form');
+  const statusMsg = document.getElementById('form-status');
+
+  form.addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    statusMsg.textContent = 'Sending...';
+
+    emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', this)
+      .then(() => {
+        statusMsg.style.color = 'green';
+        statusMsg.textContent = 'Message sent successfully!';
+        form.reset();
+      }, (error) => {
+        statusMsg.style.color = 'red';
+        statusMsg.textContent = 'Failed to send message. Please try again.';
+        console.error('EmailJS error:', error);
+      });
+  });
+</script>
+
+
+  <footer>
+    <p>&copy; 2025 Haziq Afzal. All rights reserved.</p>
+  </footer>
+  <script>
+    
+    function toggleMenu() {
+      const navbar = document.getElementById('navbar');
+      navbar.classList.toggle('show');
+    }
+  </script>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+</body>
+</html>

@@ -1,432 +1,935 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Haziq Afzal | Portfolio</title>
-  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Roboto', sans-serif;
-    }
-    body {
-      background-color: #f4f4f4;
-      color: #333;
-      line-height: 1.6;
-    }
-    header {
-      background: linear-gradient(to right, #1c1c1c, #333);
-      color: #fff;
-      padding: 20px 30px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 1000;
-    }
-    header h1 {
-      font-size: 28px;
-      font-weight: bold;
-      letter-spacing: 1px;
-    }
-    .nav-toggle {
-      display: none;
-      flex-direction: column;
-      cursor: pointer;
-    }
-    .nav-toggle span {
-      background: #fff;
-      height: 3px;
-      margin: 3px 0;
-      position: relative;
-      bottom: 35px;
-      margin-left: 340px;
-      width: 28px;
-      border-radius: 2px;
-      display: block;
-      transition: all 0.3s ease;
-    }
-    nav {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 18px;
-      transition: max-height 0.3s ease-in-out, transform 0.3s ease-in-out;
-      overflow: hidden;
-    }
-    nav a {
-      color: #fff;
-      text-decoration: none;
-      padding: 10px 16px;
-      border-radius: 6px;
-      font-weight: 500;
-      transition: background 0.3s, color 0.3s;
-    }
-    nav a:hover {
-      background: #555;
-      color: #ffd700;
-    }
-    section {
-      padding: 100px 25px 60px;
-      max-width: 1000px;
-      margin: auto;
-    }
-    h2 {
-      margin-bottom: 25px;
-      color: #1a1a1a;
-      font-size: 32px;
-      text-align: center;
-      position: relative;
-    }
-    h2::after {
-      content: "";
-      width: 60px;
-      height: 3px;
-      background: #007acc;
-      position: absolute;
-      left: 50%;
-      transform: translateX(-50%);
-      bottom: -10px;
-      border-radius: 2px;
-    }
-    .hero {
-      min-height: 100vh;
-      width: 100%;
-      margin-top: 80px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      background: linear-gradient(135deg, #6e8efb, #a777e3);
-      color: white;
-      padding: 60px 20px;
-      animation: fadeIn 2s ease-in-out;
-      position: relative;
-    }
-    .hero img {
-      width: 160px;
-      height: 160px;
-      border-radius: 50%;
-      object-fit: cover;
-      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
-      margin-bottom: 25px;
-      transition: transform 0.4s ease;
-    }
-    .hero img:hover {
-      transform: scale(1.08);
-    }
-    .hero h2 {
-      font-size: 36px;
-      font-weight: bold;
-      margin-bottom: 15px;
-      text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
-    }
-    .hero p {
-      font-size: 20px;
-      max-width: 700px;
-      line-height: 1.6;
-      text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
-    }
-    /* Existing styles... */
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Haziq Afzal - Software Engineer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-.skills ul {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  list-style: none;
-  gap: 20px;
-  padding: 0;
-  margin-top: 30px;
-}
-.skills li {
-  background: linear-gradient(to bottom right, #f0f8ff, #ffffff);
-  padding: 25px;
-  border-radius: 15px;
-  text-align: center;
-  font-weight: 600;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 12px;
-  border: 1px solid #d0eaff;
-}
-.skills li:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
-}
-.skills li i {
-  font-size: 30px;
-  color: #007acc;
-  margin-bottom: 10px;
-}
-.contact {
-  max-width: 600px;
-  margin: 40px auto;
-  padding: 0 20px;
-}
-.contact h2 {
-  margin-bottom: 20px;
-  color: #1a1a1a;
-  font-size: 32px;
-  text-align: center;
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        /* Animated Background Canvas */
+        #bgCanvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.3;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            z-index: 1000;
+            padding: 1rem 0;
+            transition: all 0.3s ease;
+            border-bottom: 2px solid rgba(255, 215, 0, 0.3);
+        }
+
+        nav.scrolled {
+            background: rgba(255, 255, 255, 0.95);
+            color: #333;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            background: linear-gradient(45deg, #FFD700, #FFA500);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 2rem;
+        }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: #FFD700;
+            transform: translateY(-2px);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background: linear-gradient(45deg, #FFD700, #FFA500);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Hamburger Menu */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: #FFD700;
+            margin: 3px 0;
+            transition: 0.3s;
+            border-radius: 2px;
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(-45deg) translate(-5px, 6px);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(45deg) translate(-5px, -6px);
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            background: linear-gradient(135deg, rgba(26, 26, 26, 0.8) 0%, rgba(45, 45, 45, 0.8) 100%);
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 2rem;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, #fff, #FFD700);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero .subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #FFD700;
+            animation: fadeInUp 1s ease 0.2s both;
+        }
+
+        .hero .description {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            color: #ccc;
+            animation: fadeInUp 1s ease 0.4s both;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 15px 30px;
+            background: linear-gradient(45deg, #FFD700, #FFA500);
+            color: #000;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            animation: fadeInUp 1s ease 0.6s both;
+            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.3);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(255, 215, 0, 0.5);
+        }
+
+        /* Floating SVG Elements */
+        .floating-svg {
+            position: absolute;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .floating-svg:nth-child(1) {
+            top: 20%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .floating-svg:nth-child(2) {
+            top: 60%;
+            right: 10%;
+            animation-delay: 2s;
+        }
+
+        .floating-svg:nth-child(3) {
+            bottom: 20%;
+            left: 20%;
+            animation-delay: 4s;
+        }
+
+        /* About Section */
+        .about {
+            padding: 100px 0;
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 3rem;
+            margin-bottom: 3rem;
+            background: linear-gradient(45deg, #fff, #FFD700);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #ccc;
+        }
+
+        /* Skills Section */
+        .skills {
+            padding: 100px 0;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .skill-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            backdrop-filter: blur(10px);
+        }
+
+        .skill-card:hover {
+            transform: translateY(-10px);
+            border-color: #FFD700;
+            box-shadow: 0 20px 40px rgba(255, 215, 0, 0.2);
+        }
+
+        .skill-icon {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 1rem;
+            background: linear-gradient(45deg, #FFD700, #FFA500);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: #000;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 100px 0;
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        /* Footer */
+        .footer {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            padding: 60px 0 30px;
+            border-top: 2px solid rgba(255, 215, 0, 0.3);
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-section h3 {
+            color: #FFD700;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+        }
+
+        .footer-logo {
+            font-size: 2rem;
+            font-weight: bold;
+            background: linear-gradient(45deg, #FFD700, #FFA500);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+        }
+
+        .footer-description {
+            color: #ccc;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            background: rgba(255, 215, 0, 0.1);
+            border: 2px solid transparent;
+            border-radius: 50%;
+            color: #FFD700;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .social-icon:hover {
+            background: linear-gradient(45deg, #FFD700, #FFA500);
+            color: #000;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(255, 215, 0, 0.3);
+        }
+
+        .social-icon svg {
+            width: 20px;
+            height: 20px;
+            fill: currentColor;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-links a {
+            color: #ccc;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            position: relative;
+            padding-left: 1rem;
+        }
+
+        .footer-links a::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: #FFD700;
+            transition: transform 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: #FFD700;
+            padding-left: 1.5rem;
+        }
+
+        .footer-links a:hover::before {
+            transform: translateX(5px);
+        }
+
+        .footer-contact {
+            color: #ccc;
+        }
+
+        .footer-contact p {
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .footer-contact svg {
+            width: 16px;
+            height: 16px;
+            margin-right: 0.5rem;
+            fill: #FFD700;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 215, 0, 0.2);
+            padding-top: 2rem;
+            text-align: center;
+            color: #999;
+        }
+
+        .footer-bottom p {
+            margin: 0;
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .contact-info {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-item svg {
+            width: 24px;
+            height: 24px;
+            margin-right: 1rem;
+            fill: #FFD700;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                height: 100vh;
+                width: 100%;
+                background: rgba(26, 26, 26, 0.95);
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                transition: right 0.3s ease;
+            }
+
+            .nav-links.active {
+                right: 0;
+            }
+
+            .nav-links li {
+                margin: 1rem 0;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero .subtitle {
+                font-size: 1.2rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        .about-image {
   position: relative;
+  width: 300px;
+  height: 300px;
 }
-.contact h2::after {
-  content: "";
-  width: 60px;
-  height: 3px;
-  background: #007acc;
+
+.image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%; /* Makes it circular */
+  display: block;
+}
+
+.circle-overlay {
   position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  bottom: -10px;
-  border-radius: 2px;
-}
-.contact p {
-  margin: 15px 0;
-  font-size: 18px;
-  color: #333;
-  line-height: 1.8;
-  background-color: #f9f9f9;
-  padding: 12px 20px;
-  border-left: 4px solid #007acc;
-  border-radius: 6px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-}
-.contact p a {
-  color: #007acc;
-  font-weight: 600;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-.contact p a:hover {
-  color: #005f99;
-  text-decoration: underline;
-}
-.contact form {
-  margin-top: 30px;
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-}
-.contact form input,
-.contact form textarea {
-  padding: 12px 15px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  font-size: 16px;
-  resize: vertical;
-  font-family: 'Roboto', sans-serif;
-}
-.contact form input:focus,
-.contact form textarea:focus {
-  border-color: #007acc;
-  outline: none;
-  box-shadow: 0 0 5px #007acc;
-}
-.contact form button {
-  background-color: #007acc;
-  color: white;
-  border: none;
-  padding: 12px 20px;
-  border-radius: 8px;
-  cursor: pointer;
-  font-weight: 600;
-  font-size: 18px;
-  transition: background-color 0.3s ease;
-}
-.contact form button:hover {
-  background-color: #005f99;
-}
-#form-status {
-  font-size: 16px;
-  margin-top: 10px;
-  color: #007acc;
-  font-weight: 600;
-}
-footer{
-    text-align: center;
-    background-color: black;
-    color: white;
-    height: 7cqb;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  top: 0;
+  left: 0;
+  pointer-events: none;
 }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .skills ul {
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-    gap: 15px;
-  }
-  .skills li {
-    padding: 20px;
-  }
-  .contact p {
-    font-size: 16px;
-    padding: 10px 15px;
-  }
-}
-
-    @media (max-width: 768px) {
-      .nav-toggle {
-        display: flex;
-      }
-      nav {
-        flex-direction: column;
-        width: 100%;
-        max-height: 0;
-        overflow: hidden;
-        transform: translateY(-20px);
-        opacity: 0;
-      
-      }
-      nav.show {
-        max-height: 500px;
-        transform: translateY(0);
-        opacity: 1;
-      }
-      nav a {
-        padding: 12px;
-        background: #333;
-        text-align: center;
-        width: 100%;
-      }
-      header {
-        flex-direction: column;
-        align-items: flex-start;
-        
-      }
-      .hero {
-        padding: 40px 15px;
-        margin-top: 100px;
-        min-height: auto;
-      }
-      .hero h2 {
-        font-size: 28px;
-      }
-      .hero p {
-        font-size: 16px;
-      }
-    }
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(30px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    
-   
-    
-  </style>
+    </style>
 </head>
 <body>
-  <header id="home">
-    <h1>Haziq Afzal</h1>
-    <div class="nav-toggle" onclick="toggleMenu()">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
-    <nav id="navbar">
-      <a href="#home">Home</a>
-      <a href="#about">About</a>
-      <a href="#skills">Skills</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
-  <section class="hero">
-    <img src="WhatsApp_Image_2025-05-20_at_1.19.16_PM-removebg-preview.png" alt="Haziq Afzal" data-aos="fade-up" data-aos-delay="500" >
-    <h2 data-aos="fade-up" data-aos-delay="500">Hi, I'm Haziq Afzal</h2>
-    <p data-aos="fade-up" data-aos-delay="500">Software Engineer passionate about Full Stack Development, Digital Advertising, and SEO Strategies.</p>
-  </section>
-  <section id="about">
-    <h2 data-aos="fade-up" data-aos-delay="500">About Me</h2>
-    <p data-aos="fade-up" data-aos-delay="500">Hello! I'm <strong>Haziq Afzal</strong>, a dedicated and versatile Software Engineer with a strong background in full stack development, digital advertising, and SEO strategies. I thrive on building efficient, scalable, and user-friendly digital experiences.</p>
-    <p data-aos="fade-up" data-aos-delay="500">My mission is to bridge creativity and functionality in every digital solution I craft—whether it's a marketing campaign, a dynamic website, or optimized web content.</p>
-  </section>
-  <section id="skills" class="skills">
-    <h2 data-aos="fade-up" data-aos-delay="500">Skills</h2>
-    <ul>
-      <li data-aos="fade-up" data-aos-delay="500"><i class="fas fa-bullhorn"></i> Digital Advertising</li>
-      <li data-aos="fade-up" data-aos-delay="500"><i class="fas fa-code"></i> Full Stack Development</li>
-      <li data-aos="fade-up" data-aos-delay="500"><i class="fas fa-search"></i> SEO Strategies</li>
-      <li data-aos="fade-up" data-aos-delay="500"><i class="fas fa-pencil-ruler"></i> Basic Graphic Design</li>
-      <li data-aos="fade-up" data-aos-delay="500"><i class="fas fa-file-alt"></i> MS Office Expert</li>
-      <li data-aos="fade-up" data-aos-delay="500"><i class="fas fa-tachometer-alt"></i> Web Optimization</li>
-      <li data-aos="fade-up" data-aos-delay="500"><i class="fas fa-pen-nib"></i> Content Creation</li>
-      <li data-aos="fade-up" data-aos-delay="500"><i class="fas fa-share-alt"></i> Social Media Management</li>
-      <li data-aos="fade-up" data-aos-delay="500"><i class="fas fa-key"></i> Keyword Research</li>
-      <li data-aos="fade-up" data-aos-delay="500"><i class="fas fa-keyboard"></i> Data Entry</li>
-    </ul>
-  </section>
-<section id="contact" class="contact">
-  <h2 data-aos="fade-up" data-aos-delay="500">Contact</h2>
-  <p data-aos="fade-up" data-aos-delay="500">Email: <a href="mailto:haziqafzal800@gmail.com">haziqafzal800@gmail.com</a></p>
-  <p data-aos="fade-up" data-aos-delay="500">Phone: <a href="tel:+923246173885">+92 324 6173885</a></p>
-  <p data-aos="fade-up" data-aos-delay="500">GitHub: <a href="https://github.com/Hiqu12" target="_blank">github.com/Hiqu12</a></p>
-
-  <form id="contact-form" data-aos="fade-up" data-aos-delay="500">
-      <input type="text" name="user_name" placeholder="Your Name" required />
-    <input type="email" name="user_name" placeholder="Your Name" required />
-    <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-    <button type="submit">Send Message</button>
-    <!-- <p id="form-status"></p> -->
-  </form>
-</section>
-<!-- Include EmailJS SDK -->
-<script src="https://cdn.emailjs.com/sdk/3.2/email.min.js"></script>
-
-<script>
-  (function(){
-    emailjs.init("YOUR_USER_ID"); // Replace with your EmailJS user ID
-  })();
-
-  const form = document.getElementById('contact-form');
-  const statusMsg = document.getElementById('form-status');
-
-  form.addEventListener('submit', function(event) {
-    event.preventDefault();
-
-    statusMsg.textContent = 'Sending...';
-
-    emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', this)
-      .then(() => {
-        statusMsg.style.color = 'green';
-        statusMsg.textContent = 'Message sent successfully!';
-        form.reset();
-      }, (error) => {
-        statusMsg.style.color = 'red';
-        statusMsg.textContent = 'Failed to send message. Please try again.';
-        console.error('EmailJS error:', error);
-      });
-  });
-</script>
-
-
-  <footer>
-    <p>&copy; 2025 Haziq Afzal. All rights reserved.</p>
-  </footer>
-  <script>
+    <canvas id="bgCanvas"></canvas>
     
-    function toggleMenu() {
-      const navbar = document.getElementById('navbar');
-      navbar.classList.toggle('show');
-    }
-  </script>
-  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-  <script>
-    AOS.init();
-  </script>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">Haziq Afzal</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <!-- Floating SVG Elements -->
+        <svg class="floating-svg" width="80" height="80" viewBox="0 0 100 100">
+            <circle cx="50" cy="50" r="40" fill="none" stroke="#FFD700" stroke-width="2"/>
+            <circle cx="50" cy="50" r="25" fill="#FFD700" opacity="0.3"/>
+        </svg>
+        
+        <svg class="floating-svg" width="60" height="60" viewBox="0 0 100 100">
+            <polygon points="50,10 90,90 10,90" fill="none" stroke="#FFA500" stroke-width="2"/>
+            <polygon points="50,25 75,75 25,75" fill="#FFA500" opacity="0.3"/>
+        </svg>
+        
+        <svg class="floating-svg" width="70" height="70" viewBox="0 0 100 100">
+            <rect x="20" y="20" width="60" height="60" fill="none" stroke="#FFD700" stroke-width="2" rx="10"/>
+            <rect x="30" y="30" width="40" height="40" fill="#FFD700" opacity="0.3" rx="5"/>
+        </svg>
+
+        <div class="hero-content">
+            <h1>Haziq Afzal</h1>
+            <div class="subtitle">Software Engineer & Digital Creative</div>
+            <div class="description">Passionate developer from University of Gujrat, crafting innovative digital solutions with cutting-edge technologies and creative design excellence.</div>
+            <a href="#contact" class="cta-button">Let's Connect</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+               <div class="about-image">
+  <div class="image-wrapper">
+    <img src="WhatsApp_Image_2025-05-20_at_1.19.16_PM-removebg-preview.png" alt="Profile Picture">
+    <svg width="300" height="300" viewBox="0 0 300 300" class="circle-overlay">
+      <circle cx="150" cy="150" r="140" fill="none" stroke="#FFD700" stroke-width="3"/>
+      <circle cx="150" cy="150" r="120" fill="rgba(255, 215, 0, 0.1)"/>
+    </svg>
+  </div>
+</div>
+
+                <div class="about-text">
+                    <p>I'm a dedicated Software Engineer and University of Gujrat graduate with a passion for creating exceptional digital experiences. My expertise spans across full-stack web development, modern design principles, and strategic digital marketing.</p>
+                    <p>With proficiency in cutting-edge technologies and a keen eye for design, I transform complex ideas into user-friendly solutions. I specialize in building responsive web applications, implementing SEO strategies, and creating compelling visual content that drives engagement.</p>
+                    <p>My approach combines technical excellence with creative innovation, ensuring every project not only meets functional requirements but also delivers outstanding user experiences.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2 class="section-title">Skills & Expertise</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <div class="skill-icon">🌐</div>
+                    <h3>Web Development</h3>
+                    <p>Full-stack development with modern frameworks and responsive design principles</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">💻</div>
+                    <h3>Frontend Technologies</h3>
+                    <p>HTML5, CSS3, JavaScript ES6+, creating interactive and dynamic user interfaces</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">⚙️</div>
+                    <h3>Backend Development</h3>
+                    <p>PHP development and MySQL database design for robust server-side solutions</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">🎨</div>
+                    <h3>Graphic Design</h3>
+                    <p>Visual identity creation, UI/UX design, and brand development</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">📈</div>
+                    <h3>SEO Optimization</h3>
+                    <p>Search engine optimization and digital marketing strategies</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">📱</div>
+                    <h3>Social Media Marketing</h3>
+                    <p>Content strategy, campaign management, and audience engagement</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">📊</div>
+                    <h3>Microsoft Office Suite</h3>
+                    <p>Advanced proficiency in Word, Excel, PowerPoint, and data analysis</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3 style="color: #FFD700; margin-bottom: 2rem;">Contact Information</h3>
+                    <div class="contact-item">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M6.62,10.79C8.06,13.62 10.38,15.94 13.21,17.38L15.41,15.18C15.69,14.9 16.08,14.82 16.43,14.93C17.55,15.3 18.75,15.5 20,15.5A1,1 0 0,1 21,16.5V20A1,1 0 0,1 20,21A17,17 0 0,1 3,4A1,1 0 0,1 4,3H7.5A1,1 0 0,1 8.5,4C8.5,5.25 8.7,6.45 9.07,7.57C9.18,7.92 9.1,8.31 8.82,8.59L6.62,10.79Z"/>
+                        </svg>
+                        <div>
+                            <strong>Phone:</strong><br>
+                            <a href="tel:03246173885" style="color: #ccc; text-decoration: none;">0324-6173885</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M20,8L12,13L4,8V6L12,11L20,6M20,4H4C2.89,4 2,4.89 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V6C22,4.89 21.1,4 20,4Z"/>
+                        </svg>
+                        <div>
+                            <strong>Email:</strong><br>
+                            <a href="mailto:haziqafzal800@gmail.com" style="color: #ccc; text-decoration: none;">haziqafzal800@gmail.com</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4M12,6A6,6 0 0,0 6,12A6,6 0 0,0 12,18A6,6 0 0,0 18,12A6,6 0 0,0 12,6Z"/>
+                        </svg>
+                        <div>
+                            <strong>Location:</strong><br>
+                            University of Gujrat Graduate<br>
+                            Punjab, Pakistan
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-info">
+                    <h3 style="color: #FFD700; margin-bottom: 2rem;">Let's Work Together</h3>
+                    <p style="color: #ccc; line-height: 1.8;">Ready to bring your digital vision to life? I'm passionate about collaborating on innovative projects that make a real impact. Whether you need web development, design solutions, or digital marketing expertise, let's create something extraordinary together.</p>
+                    <div style="margin-top: 2rem;">
+                        <a href="mailto:haziqafzal800@gmail.com" class="cta-button">Send Message</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <!-- About Section -->
+                <div class="footer-section">
+                    <div class="footer-logo">Haziq Afzal</div>
+                    <p class="footer-description">
+                        Software Engineer & Digital Creative passionate about crafting innovative solutions. 
+                        Transforming ideas into exceptional digital experiences through code and design.
+                    </p>
+                    <div class="social-icons">
+                        <a href="https://facebook.com/haziqafzal" class="social-icon" target="_blank" rel="noopener">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                            </svg>
+                        </a>
+                        <a href="https://linkedin.com/in/haziqafzal" class="social-icon" target="_blank" rel="noopener">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                            </svg>
+                        </a>
+                        <a href="https://github.com/haziqafzal" class="social-icon" target="_blank" rel="noopener">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                            </svg>
+                        </a>
+                        <a href="https://twitter.com/haziqafzal" class="social-icon" target="_blank" rel="noopener">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                            </svg>
+                        </a>
+                        <a href="https://instagram.com/haziqafzal" class="social-icon" target="_blank" rel="noopener">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About Me</a></li>
+                        <li><a href="#skills">Skills & Services</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#portfolio">Portfolio</a></li>
+                        <li><a href="#blog">Blog</a></li>
+                    </ul>
+                </div>
+
+                <!-- Services -->
+                <div class="footer-section">
+                    <h3>Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="#web-development">Web Development</a></li>
+                        <li><a href="#graphic-design">Graphic Design</a></li>
+                        <li><a href="#seo">SEO Optimization</a></li>
+                        <li><a href="#social-media">Social Media Marketing</a></li>
+                        <li><a href="#consulting">Digital Consulting</a></li>
+                        <li><a href="#maintenance">Website Maintenance</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="footer-section">
+                    <h3>Get In Touch</h3>
+                    <div class="footer-contact">
+                        <p>
+                            <svg viewBox="0 0 24 24">
+                                <path d="M6.62,10.79C8.06,13.62 10.38,15.94 13.21,17.38L15.41,15.18C15.69,14.9 16.08,14.82 16.43,14.93C17.55,15.3 18.75,15.5 20,15.5A1,1 0 0,1 21,16.5V20A1,1 0 0,1 20,21A17,17 0 0,1 3,4A1,1 0 0,1 4,3H7.5A1,1 0 0,1 8.5,4C8.5,5.25 8.7,6.45 9.07,7.57C9.18,7.92 9.1,8.31 8.82,8.59L6.62,10.79Z"/>
+                            </svg>
+                            0324-6173885
+                        </p>
+                        <p>
+                            <svg viewBox="0 0 24 24">
+                                <path d="M20,8L12,13L4,8V6L12,11L20,6M20,4H4C2.89,4 2,4.89 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V6C22,4.89 21.1,4 20,4Z"/>
+                            </svg>
+                            haziqafzal800@gmail.com
+                        </p>
+                        <p>
+                            <svg viewBox="0 0 24 24">
+                                <path d="M12,11.5A2.5,2.5 0 0,1 9.5,9A2.5,2.5 0 0,1 12,6.5A2.5,2.5 0 0,1 14.5,9A2.5,2.5 0 0,1 12,11.5M12,2A7,7 0 0,0 5,9C5,14.25 12,22 12,22C12,22 19,14.25 19,9A7,7 0 0,0 12,2Z"/>
+                            </svg>
+                            University of Gujrat, Punjab, Pakistan
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 Haziq Afzal. All rights reserved. | Crafted with passion and precision.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Canvas Background Animation
+        const canvas = document.getElementById('bgCanvas');
+        const ctx = canvas.getContext('2d');
+        let particles = [];
+
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+
+        class Particle {
+            constructor() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.vx = (Math.random() - 0.5) * 2;
+                this.vy = (Math.random() - 0.5) * 2;
+                this.size = Math.random() * 3 + 1;
+            }
+
+            update() {
+                this.x += this.vx;
+                this.y += this.vy;
+
+                if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
+                if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
+            }
+
+            draw() {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fillStyle = `rgba(255, 215, 0, ${Math.random() * 0.5 + 0.2})`;
+                ctx.fill();
+            }
+        }
+
+        function init() {
+            resizeCanvas();
+            for (let i = 0; i < 50; i++) {
+                particles.push(new Particle());
+            }
+        }
+
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            
+            particles.forEach(particle => {
+                particle.update();
+                particle.draw();
+            });
+
+            requestAnimationFrame(animate);
+        }
+
+        window.addEventListener('resize', resizeCanvas);
+        init();
+        animate();
+
+        // Navigation functionality
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        const nav = document.querySelector('nav');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navLinks.classList.remove('active');
+            });
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe skill cards for animation
+        document.querySelectorAll('.skill-card').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(50px)';
+            card.style.transition = 'all 0.6s ease';
+            observer.observe(card);
+        });
+    </script>
 </body>
 </html>
